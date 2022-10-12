@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+
+<div id="container">
+   
+    <div class="overlay"></div>
+    <div class="menu">
+        
+        <nav>
+            <img class="logo" src="logo.png" alt="">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">WordPress</a>
+                <!-- First Tier Drop Down -->
+                <ul>
+                    <li><a href="#">Themes</a></li>
+                    <li><a href="#">Plugins</a></li>
+                    <li><a href="#">Tutorials</a></li>
+                </ul>        
+                </li>
+                <li><a href="#">Web Design</a>
+                <!-- First Tier Drop Down -->
+                <ul>
+                    <li><a href="#">Resources</a></li>
+                    <li><a href="#">Links</a></li>
+                    <li><a href="#">Tutorials</a>
+                    <!-- Second Tier Drop Down -->
+                    <ul>
+                        <li><a href="#">HTML/CSS</a></li>
+                        <li><a href="#">jQuery</a></li>
+                        <li><a href="#">Other</a>
+                            <!-- Third Tier Drop Down -->
+                            <ul>
+                                <li><a href="#">Stuff</a></li>
+                                <li><a href="#">Things</a></li>
+                                <li><a href="#">Other Stuff</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Other</a>
+                    </ul>
+                    </li>
+                </ul>
+                </li>
+                <li><a href="#">Graphic Design</a></li>
+                <li><a href="#">Inspiration</a></li>
+                
+            </ul>
+        </nav>
+        <div class="lpart">
+            <svg class="toggleIcon" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"><rect fill="currentColor" height="7" rx="3" ry="3" stroke="none" width="7" x="1" y="1"></rect><rect fill="currentColor" height="7" rx="3" ry="3" stroke="none" width="7" x="1" y="11"></rect><rect fill="currentColor" height="7" rx="3" ry="3" stroke="none" width="7" x="11" y="1"></rect><rect fill="currentColor" height="7" rx="3" ry="3" stroke="none" width="7" x="11" y="11"></rect></svg>
+            <img class="logo" src="logo.png" alt="">
+        </div>
+        
+        <svg class="searchIcon" fill="none" stroke="currentColor" stroke-width="3px" viewBox="0 0 24 24"><g transform="translate(2.000000, 2.000000)"><circle cx="9.76659044" cy="9.76659044" r="8.9885584"></circle><line x1="16.0183067" x2="19.5423342" y1="16.4851259" y2="20.0000001"></line></g></svg>
+    </div>
+
+</div>
+<script>
+
+    // open/close menu (Mobile Only)
+    const menu = document.getElementsByClassName('toggleIcon')[0];
+    const overlay = document.getElementsByClassName('overlay')[0];
+    const nav = document.getElementsByTagName('nav')[0];
+
+    menu.addEventListener('click', (e)=> {
+        nav.classList.toggle('close')  
+        overlay.classList.toggle('display-inherit')
+    })
+    overlay.addEventListener('click', (e)=> {
+        nav.classList.toggle('close')  
+        overlay.classList.toggle('display-inherit')
+    })
+   
+
+    // menu drop down on click (Mobile Only)
+    document.querySelectorAll('nav ul li').forEach(e => {
+        e.addEventListener("click", (ee) => {
+            ee.stopImmediatePropagation()
+            if(e.children[1]?.tagName == 'UL') {
+                e.children[1].classList.toggle('display-inherit')    
+            }
+        }, false)
+    })
+    
+ 
+</script>
+</body>
+</html>
