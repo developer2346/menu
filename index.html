@@ -72,10 +72,16 @@
     const nav = document.getElementsByTagName('nav')[0];
 
     menu.addEventListener('click', (e)=> {
+        if(window.innerWidth > 980) {
+            return;
+        }
         nav.classList.toggle('close')  
         overlay.classList.toggle('display-inherit')
     })
     overlay.addEventListener('click', (e)=> {
+        if(window.innerWidth > 980) {
+            return;
+        }
         nav.classList.toggle('close')  
         overlay.classList.toggle('display-inherit')
     })
