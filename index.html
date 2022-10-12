@@ -90,9 +90,10 @@
     // menu drop down on click (Mobile Only)
     document.querySelectorAll('nav ul li').forEach(e => {
         e.addEventListener("click", (ee) => {
-            ee.stopImmediatePropagation()
+            ee.stopImmediatePropagation()           
             if(e.children[1]?.tagName == 'UL') {
-                e.children[1].classList.toggle('display-inherit')    
+                e.children[1].classList.toggle('display-inherit')   
+                e.children[0].classList.toggle('rotate-icon')  
             }
         }, false)
     })

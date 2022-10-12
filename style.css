@@ -41,7 +41,6 @@ body {
     width: 1.072em;
     height: 1.072em;
     margin-right: 20px;
-    
 }
 
 
@@ -141,7 +140,14 @@ nav ul ul {
 
 	
 /* Change this in order to change the Dropdown symbol */
-li > a:after { content:  ' +'; }
+li > a:after { 
+    display: inline-block;
+    margin-left: 5px;
+    content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16" transform="rotate(-90)"> <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');
+}
+.rotate-icon:after {
+    transform: rotate(90deg);
+}
 li > a:only-child:after { content: ''; }
 
 
@@ -150,7 +156,9 @@ li > a:only-child:after { content: ''; }
     .display-inherit {
         display:none;
     }
-
+    li > a:after {
+        transform: rotate(90deg);
+    }
     /* Display Dropdowns on Hover */
     nav ul li:hover > ul {
         display:inherit;
@@ -162,7 +170,7 @@ li > a:only-child:after { content: ''; }
         position: absolute;
         left: 170px;
         width: unset;
-        height: unset;
+        height: 100%;
     }
    
     nav ul {
@@ -174,15 +182,15 @@ li > a:only-child:after { content: ''; }
         flex-direction: unset;
     }
     nav > ul > li {
-        padding: 30px 0;
+        padding: 31px 0;
         background-image: linear-gradient(transparent,transparent),linear-gradient(#3D55EF,#3D55EF);
-        background-size: 100% 1px,0 1px;
+        background-size: 100% 3px,0 3px;
         background-position: 0 100%,100% 100%;
         background-repeat: no-repeat;
         transition: background-size .3s ease-in-out;
     }
     nav>ul>li:hover{
-        background-size:0 2.5px,100% 2.5px;
+        background-size:0 3px,100% 3px;
     }
     
     /* Hide Dropdowns by Default */
